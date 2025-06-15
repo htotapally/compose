@@ -5,6 +5,10 @@ services:
     ports:
       - "80:80"
       - "8404:8404"
+  webfrontend:
+    image: htotapally/sml-apach2
+    ports:
+      - "8081:80"      
   productservice:
     image: htotapally/prodprovider
     ports:
