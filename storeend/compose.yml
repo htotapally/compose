@@ -1,6 +1,8 @@
 version: "3.8"
 services:
-  orderstatusupdater:
+  orderdispatcher:
     image: htotapally/orderdispatcher
-    network_mode: host
-
+    network_mode: ${network_mode}
+  orderstatusupdater:
+    image: htotapally/orderstatusupdater
+    network_mode: ${network_mode}
