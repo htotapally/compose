@@ -1,0 +1,1 @@
+Starts needed docker services
