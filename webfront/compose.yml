@@ -1,19 +1,18 @@
-version: "3.8"
 services:
   haproxy:
     image: htotapally/haproxy
     ports:
-      - "80:80"
-      - "8404:8404"
+      - "${haproxysrc}:${haproxydst}"
+      - "${haproxyadminsrc}:${haproxyadminsrc}"
   webfrontend:
     image: htotapally/sml-apach2
     ports:
-      - "8081:80"      
+      - "${webfrontendsrc}:${webfrontenddst}"      
   productservice:
     image: htotapally/prodprovider
     ports:
-      - "8080:8080"
+      - "${productservicesrc}:${productservicedst}"
   orderservice:
     image: htotapally/orderservice
     ports:
-      - "8090:8090"
+      - "${orderservicesrc}:${orderservicedst}"
