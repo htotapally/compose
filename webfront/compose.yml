@@ -3,15 +3,18 @@ volumes:
 services:
   haproxy:
     image: htotapally/haproxy
+    container_name: haproxy
     ports:
       - "${haproxysrc}:${haproxydst}"
       - "${haproxyadminsrc}:${haproxyadminsrc}"
   webfrontend:
     image: htotapally/sml-apach2
+    container_name: sml-apach2
     ports:
       - "${webfrontendsrc}:${webfrontenddst}"      
   productservice:
     image: htotapally/prodprovider
+    container_name: prodprovider
     ports:
       - "${productservicesrc}:${productservicedst}"
   postgres:
@@ -26,5 +29,6 @@ services:
       - postgres_data:/var/lib/postgresql/data    
   orderservice:
     image: htotapally/orderservice
+    container_name: orderservice
     ports:
       - "${orderservicesrc}:${orderservicedst}"
