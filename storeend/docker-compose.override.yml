@@ -2,9 +2,9 @@ services:
   orderdispatcher:
     image: htotapally/orderdispatcher
     volumes:
-           - ./dispconf.conf:/config/dispconf.conf           
-  webfrontend:
+           - ./orderdispatcher/dispconf.conf:/config/dispconf.conf           
+  orderstatusupdater:
     image: htotapally/orderstatusupdater
     volumes:
-           - ./dispconf.conf:/config/dispconf.conf            
+           - ./orderstatusupdater/dispconf.conf:/config/dispconf.conf            
   
