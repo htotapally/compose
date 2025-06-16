@@ -1,0 +1,10 @@
+services:
+  orderdispatcher:
+    image: htotapally/orderdispatcher
+    volumes:
+           - ./dispconf.conf:/config/dispconf.conf           
+  webfrontend:
+    image: htotapally/orderstatusupdater
+    volumes:
+           - ./dispconf.conf:/config/dispconf.conf            
+  
