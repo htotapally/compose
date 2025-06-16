@@ -1,0 +1,28 @@
+services:
+  haproxy:
+    image: htotapally/haproxy
+    ports:
+      - "${haproxysrc}:${haproxydst}"
+      - "${haproxyadminsrc}:${haproxyadminsrc}"
+    volumes:
+           - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+  webfrontend:
+    image: htotapally/sml-apach2
+    ports:
+      - "${webfrontendsrc}:${webfrontenddst}"    
+    volumes:
+           - ./web/public-html/:/usr/local/apache2/htdocs/            
+  productservice:
+    image: htotapally/prodprovider
+    ports:
+      - "${productservicesrc}:${productservicedst}"
+    volumes:
+           - ./productprovider/docs.json:/products/docs.json
+           - ./productprovider/webserver.conf:/config/webserver.conf      
+  orderservice:
+    image: htotapally/orderservice
+    ports:
+      - "${orderservicesrc}:${orderservicedst}"
+    volumes:
+           - ./ordersvc/ordsvc.conf:/config/ordsvc.conf
+           - ./ordersvc/webserver.conf:/config/webserver.conf           
