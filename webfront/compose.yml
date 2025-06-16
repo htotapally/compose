@@ -1,3 +1,5 @@
+volumes:
+     postgres_data:
 services:
   haproxy:
     image: htotapally/haproxy
@@ -12,6 +14,16 @@ services:
     image: htotapally/prodprovider
     ports:
       - "${productservicesrc}:${productservicedst}"
+  postgres:
+    image: htotapally/sml-postgres-db
+    container_name: postgres
+    network_mode: "host"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data    
   orderservice:
     image: htotapally/orderservice
     ports:
