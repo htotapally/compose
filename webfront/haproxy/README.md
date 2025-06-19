@@ -4,7 +4,7 @@ For example using the servername replaceme.example.com.  This server name should
 
 
 Update /etc/hosts
-Make an entry for replaceme.example.com
+Make an entry for replaceme.example.com  
 192.168.1.170   replaceme.example.net   replaceme
 
 Proxy server testing
