@@ -38,4 +38,4 @@ should return OrderService
 curl http://replaceme.example.net/os/getorders  
 should return [], if there were no orders were created.  Otherwise should return all unprocessed orders.
 
-curl -X POST "http://sclanetadm-PowerEdge-T110-II/os/create_payment_intent" -H "Content-Type: application/json" -d '%7B%22PB000001-5LB%22%3A%7B%22item%22%3A%7B%22ProductId%22%3A%22PB000001%22%2C%22ProduceName%22%3A%22Aashirvaad%20Select%20Whole%20Wheat%20Atta%22%2C%22Brand%22%3A%22Aashirvaad%22%2C%22Item%20Id%22%3A%22PB000001-5LB%22%2C%22Regular%20Price%22%3A6.99%2C%22Promotional%20Price%E2%80%9D%3A0%7D%2C%22qty%22%3A1%7D%7D%0A'
+curl -X POST "http://sclanetadm-PowerEdge-T110-II/os/create_payment_intent" -H "Content-Type: application/json" -d '{"PB000001-5LB":{"item":{"ProductId":"PB000001","ProduceName":"Aashirvaad Select Whole Wheat Atta","Brand":"Aashirvaad","Item Id":"PB000001-5LB","Regular Price":6.99,"Promotional Price”:0},”qty”:1}}'
