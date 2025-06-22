@@ -1,9 +1,17 @@
-Starts needed docker services
+Services needed for running web front end  
 
-to start all required images
+compose.yml deploys required images by overriding the override configurations as defined in docker-compose.yml  
 
-docker compose  up -d
+Pull latest images from docker registry  
+docker compose pull  
 
-to stop all containers
-docker compose down
+To launch the containers in detached run the command:    
+docker compose up -d  
+
+To stop the containers run the command:  
+docker compose stop  
+
+To delete the containers run the command:  
+docker compose down  
+
 
