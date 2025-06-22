@@ -1,6 +1,6 @@
-Update environment specific configuration files  
+# Update environment specific configuration files  
 
-orderdispatcher/dispconf.conf
+## 1. orderdispatcher/dispconf.conf
 Replace ordersurl, kafka topic name, and kafka bootstrap end points  
 
 [orders]  
@@ -11,7 +11,7 @@ topic = TutorialTopic
 bootstrap = ["192.168.1.170:9092"]  
 
 
-orderstatusupdate/dispconf.conf
+## 2. orderstatusupdate/dispconf.conf
 Replace orderupdateurl, kafka topic name, and kafka bootstrap end points  
 
 [orders]  
