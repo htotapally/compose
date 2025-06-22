@@ -1,6 +1,20 @@
 # Update environment specific configuration files
 
 ## 1. ordsvc/ordsvc.conf
+```
+[global]
+server.socket_host = 0.0.0.0
+server.socket_port = 8090
+server.thread_pool = 10
+
+['/']
+request.dispatch = cherrypy.dispatch.MethodDispatcher()
+'cors.expose.on': True
+'tools.response_headers.headers': [('Content-Type', 'image/jpeg'), ('Access-Control-Allow-Origin', '*')]
+
+[stripe]
+stripe.api_key = sk_test_BQokikJOvBiI2HlWgH4olfQ2
+```
 
 ## 2. ordsvc/webserver.conf
 
