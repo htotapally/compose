@@ -12,6 +12,15 @@ bootstrap = ["192.168.1.170:9092"]
 
 
 orderstatusupdate/dispconf.conf
+Replace orderupdateurl, kafka topic name, and kafka bootstrap end points  
+
+[orders]  
+orderupdateurl = http://192.168.1.170/os/complete  
+
+[kafka]  
+topic = OrderStatus  
+bootstrap = ["192.168.1.170:9092"]  
+
 
 
 Services needed for running web front end  
