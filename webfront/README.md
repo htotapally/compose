@@ -20,10 +20,10 @@ stripe.api_key = sk_test_BQokikJOvBiI2HlWgH4olfQ2
 
 Replace ordersurl, kafka topic name, and kafka bootstrap end points
 
-## 2. prodprovider/dcos.json
+## 3. prodprovider/docs.json
 Update documents.
 
-## 3. prodprovider/webserver.conf
+## 4. prodprovider/webserver.conf
 
 # Services needed for running web front end  
 
