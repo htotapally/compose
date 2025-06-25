@@ -108,7 +108,7 @@ function executesearch() {
       response = this.responseText;
       data = [];
       if (!Array.isArray(response)) {
-        data[0] = JSON.parse(response); 
+        data = JSON.parse(response); 
       } else {
         data = respsone;
       }
@@ -122,7 +122,7 @@ function executesearch() {
     }
   };
 
-  xhttp.open("GET", "http://localhost/cp/get_item?itemId=" + searchtext, true);
+  xhttp.open("GET", "/cp/get_item?itemId=" + searchtext, true);
   xhttp.send();
 }
 
@@ -149,7 +149,7 @@ function placeorder() {
   };
 
   x = JSON.stringify(Object.fromEntries(cart));
-  xhttp.open("POST", "http://localhost/cp/placeorder?cart=" + x, true);
+  xhttp.open("POST", "/cp/placeorder?cart=" + x, true);
   xhttp.send();
 }
 
@@ -184,7 +184,6 @@ function calculatetotal() {
 }
 
 function getprice(item) {
-  productId = item["Item Id"];
   promo = 0;
   regular = parseFloat(item["Regular Price"]);
   price = regular;
@@ -232,26 +231,23 @@ function loadDoc() {
     }
   }
 
-  xhttp.open("GET", "http://localhost/cp/get_allitems", true);
+  xhttp.open("GET", "/cp/get_allitems", true);
   xhttp.send();
 }
 
-function convertToRenderable(jsonArray) {
+function convertToRenderable(items) {
   var docs = [];
   index = 0;
-  for (let i = 0; i < jsonArray.length; i++) {
-    doc = jsonArray[i]["doc"]
-    items = doc["items"]
-    for (let j = 0; j < items.length; j++) {
-      docs[index] = {};
-      docs[index]["ProductId"] = doc["productId"]
-      docs[index]["ProduceName"] = doc["productName"]
-      docs[index]["Brand"] = doc["brand"]
-      docs[index]["Item Id"] = doc["items"][j]["itemId"]
-      docs[index]["Regular Price"] = doc["items"][j]["price"]["regular"]
-      docs[index]["Promotional Price"] = doc["items"][j]["price"]["promo"]
-      index++;
-    }
+  for (let j = 0; j < items.length; j++) {
+    doc = items[j];
+    docs[index] = {};
+    docs[index]["ProductId"] = doc["productId"]
+    docs[index]["ProduceName"] = doc["productName"]
+    docs[index]["Brand"] = doc["brand"]
+    docs[index]["Item Id"] = doc["items.itemId"]
+    docs[index]["Regular Price"] = doc["items.price.regular"]
+    docs[index]["Promotional Price"] = doc["items.price.promo"]
+    index++;
   }
 
   return docs;
