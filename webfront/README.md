@@ -46,4 +46,9 @@ To delete the containers run the command:
 ```
 docker compose down  
 ```
+To debug issues with a service defined in compose.yml
+```
+docker compose run -e DEBUG=true <service in compose.yml>
+```
+
 
