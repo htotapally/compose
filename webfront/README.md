@@ -1,6 +1,7 @@
 # Update environment specific configuration files
 
 ## 1. ordsvc/ordsvc.conf
+Update stripe.api_key with assigned one.
 ```
 [global]
 server.socket_host = 0.0.0.0
@@ -51,4 +52,6 @@ To debug issues with a service defined in compose.yml
 docker compose run -e DEBUG=true <service in compose.yml>
 ```
 
+# Accessing Webfront
+The website is accessible using the url http://<hostname/
 
