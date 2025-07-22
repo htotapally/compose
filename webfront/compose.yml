@@ -15,3 +15,13 @@ services:
     container_name: reportsvc
     ports:
       - "${reportsvcsrc}:${reportsvcdst}"
+  productsvc:
+    image: htotapally/productapi
+    container_name: productsvc
+    ports:
+      - "${productsvcsrc}:${productsvcdst}"
+  ordersvc:
+    image: htotapally/storovapi
+    container_name: ordersvc
+    ports:
+      - "${ordersvcsrc}:${ordersvcdst}"
