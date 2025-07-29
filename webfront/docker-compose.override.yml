@@ -7,6 +7,6 @@ services:
     volumes:
            - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
   webfrontend:
-    image: htotapally/sml-apach2
+    image: htotapally/sml-apache2
     ports:
       - "${webfrontendsrc}:${webfrontenddst}"    
